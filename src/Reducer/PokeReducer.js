@@ -1,5 +1,4 @@
 const defaultState = {
-    isLoading : false,
     data: [],
     error: "",
 }
@@ -9,7 +8,6 @@ const PokeReducer = (state = defaultState, action) => {
         case "POKE_FETCHED":
             return{
                 ...state,
-                isloading: false,
                 data:action.payload.results,
                 error:""
             };
@@ -18,8 +16,13 @@ const PokeReducer = (state = defaultState, action) => {
                 error:"error fetching the pokemon"
             }
         
+        case "POKE_DELETE":
+            return{
+                ...state,
+                data: state.data.filter((data, name) => name.name !== data.name)
+            }
         default:
-            return state;
+            return state;   
     }
 }
 

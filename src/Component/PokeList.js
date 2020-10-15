@@ -1,6 +1,6 @@
 import React, {useState}  from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {FetchPoke} from "../actions/PokeActions";
+import {FetchPoke,PokeDelete} from "../actions/PokeActions";
 import {Link} from "react-router-dom";
 
 
@@ -17,6 +17,9 @@ const PokeList  = (props) =>{
      }
      console.log("My obj")
      console.log(pokeList.data)
+     const del = (name)=>{
+         PokeDelete(name)
+     }
     return(
         <diV>   
             <div >
@@ -28,7 +31,9 @@ const PokeList  = (props) =>{
             <Link to={`/pokemon/${val.name}`}>
              {val.name}
             </Link>
+            <button onClick={()=> del(val)}>delete</button>
             </li>
+            
         ))}
         </diV>
     )

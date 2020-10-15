@@ -32,3 +32,10 @@ export const FetchSinglePoke = (pokemon) =>async dispatch =>{
         })
     }
 } 
+
+export const PokeDelete = (name) => async dispatch =>{
+    dispatch({
+        type: "POKE_DELETE",
+        name: name,
+    })
+}
