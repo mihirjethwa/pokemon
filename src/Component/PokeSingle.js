@@ -19,7 +19,6 @@ const PokeSingle  = (props) =>{
             <img src ={pokeSingle.sprites ? pokeSingle.sprites.back_default : ''}alt=""/>
             <img src ={pokeSingle.sprites ? pokeSingle.sprites.front_shiny : ''}alt=""/>
             <img src ={pokeSingle.sprites ? pokeSingle.sprites.back_shiny : ''}alt=""/>
-            
             <div><h2>Pokemon name: {pokeSingle.name}</h2></div>
             <div><h2>Pokemon Height: {pokeSingle.height}</h2></div>
             
